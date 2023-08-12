@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile | MeroSathi</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="../plugins/fullcalendar/main.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            
+          </li>
+       
+        </ul>
+    
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Navbar Search -->
+         
+    
+          <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+         
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        
+          <img
+            src="../dist/img/Logo.jpg"
+            alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: 0.8"
+          />
+          <span class="brand-text font-weight-light">Mero Sathi</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <!-- <div class="image">
+              <img
+                src="../dist/img/user2-160x160.jpg"
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
+            </div> -->
+            <div class="info">
+              <a href="#" class="d-block" id="userName"></a>
+            </div>
+          </div>
+
+          <!-- SidebarSearch Form -->
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input
+                class="form-control form-control-sidebar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+            
+              <li class="nav-item">
+                <a href="donorDashboard.html" class="nav-link  ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+
+              <li class="nav-header">Blood Donation</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Blood Donation
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="viewBloodDonation.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>View Donation</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="createBloodDonation.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Donation</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-header">Settings</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Profile
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>View Profile</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" onclick="logout()" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Sign Out</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Profile</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">View Profile</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <section class="content">
+          <div class="container mt-5 mb-5">
+            <div class="row no-gutters">
+              <div class="col-md-4 col-lg-4" id="profileImage">
+               
+              </div>
+              <div class="col-md-8 col-lg-8">
+                <div class="d-flex flex-column">
+                  <div
+                    class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white"
+                  >
+                    <h3 class="display-5" id="donarUserName"></h3>
+                    <i class="fa fa-facebook"></i><i class="fa fa-google"></i
+                    ><i class="fa fa-youtube-play"></i
+                    ><i class="fa fa-dribbble"></i
+                    ><i class="fa fa-linkedin"></i>
+                  </div>
+                  <div class="p-3 bg-black text-white" id="tblbody">
+              
+                  </div>
+                  <div class="p-3 bg-black text-white" id="tblbody2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </section>
+        <div class="modal fade" id="resetPasword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reset Password </h5>
+                <button type="button" class="close closeresetmodal"  aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form id="updateValue">
+                        <input type="text" id="userid" hidden />
+                      <div class="form-group">
+                          <label>New Password</label>
+                           <input type="password" id="newPassword" class="form-control"/>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary closeresetmodal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                  </form>
+              </div>
+         
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="changePhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Photo</h5> </h5>
+                <button type="button" class="close closephotomodal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form id="updatePhoto">
+                        <input type="text" id="userid" hidden />
+                        <input type="text" id="blood_id" hidden />
+
+                      <div class="form-group">
+                          <label>Upload New Phtoo</label>
+                           <input type="file" id="newPhoto" name="image" class="form-control"/>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary closephotomodal" >Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                  </form>
+              </div>
+         
+            </div>
+          </div>
+        </div>
+
+      
+
+
+        <div class="modal fade" id="resetProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+                <button type="button" class="close closeprofilemodal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form id="testProfile"  enctype="multipart/form-data">
+                        <input type="text" id="newuserid" hidden />
+                        <input type="text" id="blood_id" hidden />
+                        <input type="text" id="password_od" hidden />
+
+                      <div class="form-group">
+                          <label>Email</label>
+                           <input type="text" id="newEmail" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                          <label>Name</label>
+                           <input type="text" id="newName" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                          <label>Address</label>
+                           <input type="text" id="newAddress" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                          <label>Gender</label>
+                           <select class="form-control" id="newGender">
+                             <option value="MALE">Male</option>
+                             <option value="FEMALE">Female</option>
+                           </select>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label>Phone Number</label>
+                           <input type="text" id="newPhoneNumber" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                          <label>Blood Group</label>
+                          <select class="form-control select2" id="bloodRequestGroup" style="width: 100%;">
+                            <option value="A+" selected="selected">A +ve</option>
+                            <option value="A-">A -ve</option>
+                            <option value="B+">B +ve</option>
+                            <option value="B-">B -ve</option>
+                            <option value="AB+">AB +ve</option>
+                            <option value="AB-">AB -ve</option>
+                            <option value="O+">O +ve</option>
+                            <option value="O-">O -ve</option>
+                          </select>
+                      </div>
+                     
+                        <!-- <div class="form-group">
+                          <label>Image</label>
+                          <input type="file" id="newImage" name="newimg" />
+                        </div> -->
+                        <div class="form-group">
+                          <label>Confirm Password</label>
+                          <input type="password" id="confirmPassword" class="form-control"/>
+                        </div>
+                    
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary closeprofilemodal" >Close</button>
+                          <button type="submit" id="upload-file-btn" class="btn btn-primary">Save changes</button>
+                        </div>
+                  </form>
+              </div>
+         
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content -->
+
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+        <strong>Copyright &copy; 2022 MeroSathi</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> 1.0.0
+        </div>
+      </footer>
+    
+
+    
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+   
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+
+  
+    <!-- Page specific script -->
+    <script>
+
+
+
+            $('body').on('click', '.closeresetmodal', function() {    
+              $('#resetPasword').modal('hide');
+             });
+             $('body').on('click', '.closeprofilemodal', function() {    
+              $('#resetProfile').modal('hide');
+             });
+             $('body').on('click', '.closephotomodal', function() {    
+              $('#changePhoto').modal('hide');
+             });
+
+
+
+      function logout(){
+         
+          localStorage.clear()
+       }
+      $(document).ready(function(){
+        var username = localStorage.getItem("UserName");
+        $("#userName").html(username);
+        var token = localStorage.getItem("Authorization");
+    if(token==null){
+      window.location.href="../../index.html"
+    }else{
+
+      
+
+        $.ajax({
+              type: "GET",
+              dataType: "json",
+              url: "http://127.0.0.1:8000/donor/profile/",
+              headers : {'Authorization': localStorage.getItem("Authorization")},
+              success: function(result){
+                  console.log(result);
+
+                  BindDatawithJquery(result);
+              }
+          });
+          function BindDatawithJquery(data){
+              if (data != null && data) {
+
+              for (var i = 0; i < data.length; i++) {
+                    var image2 = data[i].image;
+                    var image3 = "<img width='400px' class='p-4 mt-2' src='"+ image2  + " '" + "alt='profileImage'>"
+                    console.log(data[i].blood_group);
+                    var tablerow =
+                                "<h6>"+ "Blood Group : " + data[i].blood_group + "</h6>" 
+                  $("#profileImage").append(image3);             
+                  $("#tblbody").append(tablerow);
+                  $('#bloodRequestGroup').val(data[i].blood_group);
+                  $('#blood_id').val(data[i].id);
+                  var user_id = data[i].user;
+                  $.ajax({
+                                      type: "GET",
+                                      dataType: "json",
+                                      url: "http://127.0.0.1:8000/accounts/profile/",
+                                      headers : {'Authorization': localStorage.getItem("Authorization")},
+                                      success: function(result){
+                                          console.log(result);
+                                          if (data != null && data) {
+
+                                            for (var i = 0; i < result.length; i++) {
+
+
+                                                      var tablerow =
+                                                                  "<h6>"+ "Address : " + result[i].address + "</h6>" +
+                                                                  "<h6>"+ "Email : " + result[i].email + "</h6>" +
+                                                                  "<h6>"+ "Phone Number : " + result[i].phone + "</h6>" +
+                                                                  "<h6>"+ "Gender : " + result[i].gender + "</h6>" +
+                                                                  `<a class='btn btn-primary mx-1 editProfile'  data-id=${user_id} '>Update Profile` + `</a>`+
+                                                                  `<a class='btn btn-primary mx-1 editPhoto'  data-id=${user_id} '>Update Photo` + `</a>`+
+                                                                  `<a class='btn btn-success edit'  data-id=${user_id}  '>Update Password` + `</a>`
+                                                    $("#tblbody2").append(tablerow);
+                                                    $("#donarUserName").html(result[i].name);
+                                                    $("#newName").val(result[i].name);
+                                                    $("#newEmail").val(result[i].email);
+                                                    $("#newAddress").val(result[i].address);
+                                                    $("#newPhoneNumber").val(result[i].phone);
+                                                    $("#newGender").val(result[i].gender);
+                                                    $("#newuserid").val(result[i].id);
+                                                                        }
+                                                                    }
+                                                }
+                                              });
+                                            }
+                                          }
+                                        }
+
+
+            $('body').on('click', '.edit', function() {
+               var id = $(this).data('id');
+
+               $('#userid').val(id);
+               
+          
+            $('#resetPasword').modal('show');
+      
+            });
+
+            $('body').on('click', '.editProfile', function() {
+               var id = $(this).data('id');
+
+               $('#userid').val(id);
+          
+            $('#resetProfile').modal('show');
+      
+            });
+
+            $('body').on('click', '.editPhoto', function() {
+               var id = $(this).data('id');
+
+               $('#userid').val(id);
+          
+            $('#changePhoto').modal('show');
+      
+            });
+
+
+            $("#updateValue").submit(function(event){
+              
+              event.preventDefault();
+              var id= $('#userid').val();
+              var password = $("#newPassword").val();
+              console.log(id);
+              console.log(password);
+            $.ajax({
+                type: "PATCH",
+                url: "http://127.0.0.1:8000/accounts/profile/"+ id + "/",
+                data: {
+                   password : password
+                },
+                headers : {'Authorization': localStorage.getItem("Authorization")},
+                dataType: 'json',
+                success: function(res) {
+                  console.log(res);
+                  window.location.href="profilePageDonor.html";
+               
+                }
+            });
+
+             });
+
+             $("#updatePhoto").submit(function(event){
+             
+              event.preventDefault();
+             
+              var blood_id= $('#blood_id').val(); 
+              var formData = new FormData(this);
+          
+          
+         
+           
+            $.ajax({
+              type: "PATCH",
+                url: "http://127.0.0.1:8000/donor/profile/"+ blood_id + "/",
+                data: formData,
+               
+                processData: false,
+                contentType: false,
+               
+                headers : {
+                  'Authorization': localStorage.getItem("Authorization"),
+                  'Content-Type' : undefined,
+              },
+               
+                success: function(res) {
+                  console.log(res);
+                  window.location.href="profilePageDonor.html";
+                 
+                }
+            });
+
+             });
+
+
+          $("#testProfile").submit(function(event){
+            
+              event.preventDefault();
+              var id= $('#newuserid').val();
+              var blood_id= $('#blood_id').val();
+
+              var name=$('#newName').val();
+              var email=$('#newEmail').val();
+              var address=$('#newAddress').val();
+              var gender=$('#newGender').val();
+              var phoneNumber=$('#newPhoneNumber').val();
+              var password =$('#confirmPassword').val();
+
+              var blood_group=$('#bloodRequestGroup').val();
+      
+            $.ajax({
+                type: "PATCH",
+                url: "http://127.0.0.1:8000/donor/profile/"+ blood_id + "/",
+                data: {
+                  blood_group : blood_group,
+                
+                },
+                dataType: 'json',
+               
+                headers : {
+                  'Authorization': localStorage.getItem("Authorization"),
+                
+              
+                  
+                },
+                
+                success: function(res) {
+                  console.log(res);
+                
+                 
+                },
+                error: function(res){
+                  console.log(res);
+                }
+            });
+            $.ajax({
+                type: "PUT",
+                url: "http://127.0.0.1:8000/accounts/profile/"+ id + "/",
+                data: {
+                 email: email,
+                 name: name,
+                 address: address,
+                 gender: gender,
+                 phone: phoneNumber,
+                 password: password,
+                },
+                headers : {'Authorization': localStorage.getItem("Authorization")},
+                dataType: 'json',
+                success: function(res) {
+                  console.log(res);
+                 
+                  window.location.href="profilePageDonor.html";
+                  
+                }
+            });
+
+             });
+              
+            };
+        
+     
+             
+
+                                          
+   });
+
+
+
+    </script>
+  </body>
+</html>
